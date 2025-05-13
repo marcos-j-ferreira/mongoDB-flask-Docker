@@ -1,42 +1,74 @@
-from pymongo.mongo_client import MongoClient
-from pymongo.server_api import ServerApi
-from dotenv import load_dotenv
-import os
+from db import db
 
-load_dotenv()
+#client = MongoClient(uri, server_api=ServerApi('1'))
 
-uri = os.getenv("URL_DB")
+#data = db.colecao
 
-client = MongoClient(uri)
-db = client["marcos-estudos"]
-colecao = db["usuarios"]
+# def connectDB():
+#     try:
+#         client.admin.command('ping')
+#         return True
+#     except Exception as e:
+#         print(e)
 
+def firtData()a:
+    colecao = db["usuarios"]
 
-client = MongoClient(uri, server_api=ServerApi('1'))
-
-def connect():
-    try:
-        client.admin.command('ping')
-        return True
-    except Exception as e:
-        print(e)
-
-def firtData():
-
-    if not connect():
-        print("banco de dados não conectado ")
+    # if not connectDB():
+    #     print("banco de dados não conectado ")
 
     try:
         user = {
-            'name':"Luiz",
-            'age':20
+            'name':"Ana",
+            'age':19
         }
 
-        result = colecao.insert_one(user)
+        result = colecao.insert_one(a)
 
         print({"id_inserido": str(result.inserted_id)})
     
     except Exception as e:
         print("Erro", e)
 
-firtData()
+def search_all():
+
+    colecao = db["usuarios"]
+
+    try:
+
+        for doc in colecao.find():
+            print(f"{doc['name']} {doc['age']}")
+
+
+            # Resposta, todos os usuários e suas idades
+
+            # marcos 20
+            # Luiz 20
+            # Ana 19
+
+    except Exception as e:
+        print(f"Error: {e}")
+
+def search ():
+
+    colecao = db["usuarios"]
+    
+    try:
+
+        for doc in colecao.find({'name':"Luiz"}):
+            print(f"Usuário: {doc['name']} Tem: {doc['age']} anos")
+
+            # filtrar por um usuario especifico 
+
+            #Usuário: Luiz Tem: 20 anos
+
+
+
+    except Exception as e:
+        print(f"Erro: {e}")
+
+obj = {
+    
+}
+
+#firtData(a)

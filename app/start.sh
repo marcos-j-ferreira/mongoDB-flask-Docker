@@ -1,1 +1,1 @@
-source mongo-falsk/bin/activate
+source bin/activate

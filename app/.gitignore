@@ -1,6 +1,7 @@
-*
-
-!requirements.txt
-!connect.py
-!start.sh
-!.gitignore
+__pycache__/
+venv/
+.env
+connect.py
+teste.py
+routess.py
+*.pyc
