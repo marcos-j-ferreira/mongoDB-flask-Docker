@@ -2,22 +2,33 @@ from config.database import connect
 
 app = connect()
 
-def insertDate():
+def insertDate(obj):
 
-    exp = {
-        'type':"lazer",
-        'tarefa':"assistir filme",
-        'tempo': "1 hora",
-        'estado': False
+    data = {
+        'tarefa':obj['tarefa'],
+        'tempo':obj['tempo'],
+        'estado':obj['estado']
     }
-
-    nameColecao = exp['type']
+    if app is None:
+        return "Erro com banco de dados"
     
+    if  not isinstance(obj, dict) or not obj:
+        return "Dados vazios"
+    try:
+        nameColecao = app[obj['type']]
+        result = nameColecao.insert_one(data)
+
+        return f"Tarefa adiciona com sucesso"
     
-    print(nameColecao)
+    except Exception as e:
+        return f"Erro no servidor: {e}"
 
-insertDate()
-
+    # exp = {
+    #     'type':"lazer",
+    #     'tarefa':"assistir filme",
+    #     'tempo': "1 hora",
+    #     'estado': False
+    # }
 # Esse serviço vai receber qutros dados, como:
 # tipo: lazer, estuods, jogos -> que será coleções
 # tarefa: O que ele vai ter que fazer
