@@ -1,7 +1,6 @@
 from flask import Blueprint, request
 from src.controllers import controller
 
-
 tarefas = Blueprint('tarefas', __name__)
 
 @tarefas.route('/', methods=['GET'])

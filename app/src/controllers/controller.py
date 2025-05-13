@@ -1,6 +1,5 @@
 from flask import Flask, jsonify
-from models.model import *
-
+from src.models.model import *
 
 def insertTask(data):
     

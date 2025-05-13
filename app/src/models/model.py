@@ -1,4 +1,4 @@
-from config.database import connect
+from src.config.database import connect
 
 app = connect()
 
