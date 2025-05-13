@@ -1,74 +1,74 @@
-from db import db
+# from db import db
 
-#client = MongoClient(uri, server_api=ServerApi('1'))
+# #client = MongoClient(uri, server_api=ServerApi('1'))
 
-#data = db.colecao
+# #data = db.colecao
 
-# def connectDB():
+# # def connectDB():
+# #     try:
+# #         client.admin.command('ping')
+# #         return True
+# #     except Exception as e:
+# #         print(e)
+
+# def firtData()a:
+#     colecao = db["usuarios"]
+
+#     # if not connectDB():
+#     #     print("banco de dados não conectado ")
+
 #     try:
-#         client.admin.command('ping')
-#         return True
+#         user = {
+#             'name':"Ana",
+#             'age':19
+#         }
+
+#         result = colecao.insert_one(a)
+
+#         print({"id_inserido": str(result.inserted_id)})
+    
 #     except Exception as e:
-#         print(e)
+#         print("Erro", e)
 
-def firtData()a:
-    colecao = db["usuarios"]
+# def search_all():
 
-    # if not connectDB():
-    #     print("banco de dados não conectado ")
+#     colecao = db["usuarios"]
 
-    try:
-        user = {
-            'name':"Ana",
-            'age':19
-        }
+#     try:
 
-        result = colecao.insert_one(a)
+#         for doc in colecao.find():
+#             print(f"{doc['name']} {doc['age']}")
 
-        print({"id_inserido": str(result.inserted_id)})
+
+#             # Resposta, todos os usuários e suas idades
+
+#             # marcos 20
+#             # Luiz 20
+#             # Ana 19
+
+#     except Exception as e:
+#         print(f"Error: {e}")
+
+# def search ():
+
+#     colecao = db["usuarios"]
     
-    except Exception as e:
-        print("Erro", e)
+#     try:
 
-def search_all():
+#         for doc in colecao.find({'name':"Luiz"}):
+#             print(f"Usuário: {doc['name']} Tem: {doc['age']} anos")
 
-    colecao = db["usuarios"]
+#             # filtrar por um usuario especifico 
 
-    try:
-
-        for doc in colecao.find():
-            print(f"{doc['name']} {doc['age']}")
+#             #Usuário: Luiz Tem: 20 anos
 
 
-            # Resposta, todos os usuários e suas idades
 
-            # marcos 20
-            # Luiz 20
-            # Ana 19
+#     except Exception as e:
+#         print(f"Erro: {e}")
 
-    except Exception as e:
-        print(f"Error: {e}")
-
-def search ():
-
-    colecao = db["usuarios"]
+# obj = {
     
-    try:
+# }
 
-        for doc in colecao.find({'name':"Luiz"}):
-            print(f"Usuário: {doc['name']} Tem: {doc['age']} anos")
-
-            # filtrar por um usuario especifico 
-
-            #Usuário: Luiz Tem: 20 anos
-
-
-
-    except Exception as e:
-        print(f"Erro: {e}")
-
-obj = {
-    
-}
-
-#firtData(a)
+# #firtData(a)
